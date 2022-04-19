@@ -1,0 +1,32 @@
+[
+    {
+        "cat":"Muito Abaixo do peso",
+        "min":0,
+        "max":17
+    },
+    {
+        "cat":"Abaixo do peso",
+        "min":17,
+        "max":18.49
+    },
+    {
+        "cat":"Peso Normal",
+        "min":18.5,
+        "max":24.99
+    },
+    {
+        "cat":"Acima do Peso",
+        "min":25,
+        "max":29.99
+    },
+    {
+        "cat":"Obesidade I",
+        "min":30,
+        "max":34.99
+    },
+    {
+        "cat":"Obesidade II",
+        "min": 35,
+        "max": 99
+    }
+]
