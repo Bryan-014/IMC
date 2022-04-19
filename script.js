@@ -5,7 +5,6 @@ let lbResultado = document.querySelector("#possivelErro");
 let genero;
 let peso;
 let altura;
-let alturaConvertida;
 
 let imc;
 
@@ -26,7 +25,7 @@ btnCalculo.addEventListener("click", (event) => {
     if (!validaInformaçoes(genero.value, peso.value, altura.value))
         return;
     
-    imc = calcularImc(parseFloat(peso.value), parseFloat(alturaConvertida)).toFixed(2);
+    imc = calcularImc(parseFloat(peso.value), parseFloat(altura.value)).toFixed(2);
 
     lbResultado.innerHTML = "Valor do IMC =";
     
@@ -74,33 +73,16 @@ function validaInformaçoes(_genero, _peso, _altura) {
     } else if (parseFloat(_altura) > 246) {
         declararErro("Altura muito alta para ser real!!!", altura);
         return false;
-    } else
-        alturaConvertida = converterAltura(_altura);
+    }
     return true;
 }
 
 function calcularImc(_peso, _altura) {
-    return _peso /_altura**2;
+    return _peso /(_altura/100)**2;
 }
 
 function declararErro(msg, elemento) {
     lbResultado.innerHTML = "Erro"
     txtResultado.value = msg;
     elemento.focus();
-}
-
-function converterAltura(_altura) {
-    let convercao = "";
-    if (_altura.length > 2) {
-        for (let i = 0; i < 3; i++) {
-            if (i != 1)
-                convercao += _altura[i];
-            else {
-                convercao += ".";
-                convercao += _altura[i];
-            }            
-        }
-    } else
-        return _altura;
-    return convercao;
 }
