@@ -26,8 +26,6 @@ btnCalculo.addEventListener("click", (event) => {
         return;
     
     imc = calcularImc(parseFloat(peso.value), parseFloat(altura.value)).toFixed(2);
-
-    lbResultado.innerHTML = "Valor do IMC =";
     
     resultado.forEach((item) => {
         if (imc > item.min && imc < item.max)
@@ -74,6 +72,7 @@ function validaInformaçoes(_genero, _peso, _altura) {
         declararErro("Altura muito alta para ser real!!!", altura);
         return false;
     }
+    lbResultado.innerHTML = "Valor do IMC =";
     return true;
 }
 
