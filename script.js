@@ -80,7 +80,7 @@ function validaInformaçoes(_genero, _peso, _altura) {
 }
 
 function calcularImc(_peso, _altura) {
-    return _peso / (_altura**2);
+    return _peso /_altura**2;
 }
 
 function declararErro(msg, elemento) {
